@@ -1,8 +1,8 @@
 # cats_vs_dogs
 Needed dependancies:
-pip install 
 
-opencv-python
+
+pip install opencv-python
 
 pip install numpy
 
