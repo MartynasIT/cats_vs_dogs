@@ -1,8 +1,8 @@
 # cats_vs_dogs
 Needed dependancies:
-pip install opencv-python
-pip install numpy
-pip install Keras
+*pip install opencv-python
+*pip install numpy
+*pip install Keras
 
 How to run:
 Open IDE and run Initializer.py, enter path to the folder with images. 
