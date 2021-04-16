@@ -8,20 +8,19 @@ class Prediction:
         self.model = model
 
     def shape_image(self, file):
-        image = cv2.imread(file)
-        image = cv2.resize(image, (64, 64))
-        image = np.reshape(image, [1, 64, 64, 3])
+        try:
+            image = cv2.imread(file)
+            image = cv2.resize(image, (64, 64))
+            image = np.reshape(image, [1, 64, 64, 3])
+        except cv2.error as e:
+            return 'error'
         return image
 
     def predict(self, image):
         recognized_val = self.model.predict_classes(image)
-        prediction = ''
+        prediction = 'unknown_class'
         if recognized_val == 0:
             prediction = 'cat'
         elif recognized_val == 1:
             prediction = 'dog'
-        else:
-            # does not matter since all of these models return either cat or dog
-            # but added for sake of better models
-            prediction = 'unknown_class'
         return prediction
